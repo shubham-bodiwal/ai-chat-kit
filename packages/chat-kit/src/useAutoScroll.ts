@@ -18,6 +18,7 @@ export function useAutoScroll<T extends HTMLElement>(dep: unknown, threshold = 4
     setAtBottom(bottom);
   }, [threshold]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: `dep` is the trigger; re-run whenever content changes
   useLayoutEffect(() => {
     const el = ref.current;
     if (el && pinned.current) el.scrollTop = el.scrollHeight;

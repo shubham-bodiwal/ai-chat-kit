@@ -22,6 +22,7 @@ function CodeBlock({ language, code }: { language?: string; code: string }) {
           <span className="ck-sr-only"> code</span>
         </button>
       </figcaption>
+      {/* biome-ignore lint/a11y/noNoninteractiveTabindex: scrollable code must be keyboard-reachable */}
       <pre tabIndex={0}>
         <code>{code}</code>
       </pre>

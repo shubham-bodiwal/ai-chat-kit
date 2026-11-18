@@ -5,7 +5,7 @@ import type { StreamEvent } from "../src";
 export function controllableFetch() {
   let ctrl!: ReadableStreamDefaultController<Uint8Array>;
   const enc = new TextEncoder();
-  const calls: { body: any; signal: AbortSignal }[] = [];
+  const calls: { body: { messages: { role: string; content: string }[] }; signal: AbortSignal }[] = [];
   const fetchMock = async (_url: RequestInfo | URL, init?: RequestInit) => {
     const signal = init!.signal!;
     calls.push({ body: JSON.parse(String(init!.body)), signal });

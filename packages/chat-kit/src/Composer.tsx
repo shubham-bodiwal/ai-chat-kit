@@ -36,6 +36,7 @@ export function Composer({ status, onSend, onStop, placeholder = "Ask anything",
         rows={1}
         value={value}
         placeholder={placeholder}
+        // biome-ignore lint/a11y/noAutofocus: opt-in via the autoFocus prop, off by default
         autoFocus={autoFocus}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={onKeyDown}

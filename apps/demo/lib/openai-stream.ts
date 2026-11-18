@@ -40,7 +40,8 @@ async function complete(cfg: Config, messages: Msg[], withTools: boolean, emit: 
       const delta = JSON.parse(data).choices?.[0]?.delta;
       if (delta?.content) emit({ type: "text", delta: delta.content });
       for (const tc of delta?.tool_calls ?? []) {
-        const c = (calls[tc.index ?? 0] ??= { id: "", name: "", args: "" });
+        calls[tc.index ?? 0] ??= { id: "", name: "", args: "" };
+        const c = calls[tc.index ?? 0];
         if (tc.id) c.id = tc.id;
         if (tc.function?.name) c.name += tc.function.name;
         if (tc.function?.arguments) c.args += tc.function.arguments;

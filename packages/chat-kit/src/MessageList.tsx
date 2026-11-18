@@ -49,13 +49,13 @@ export function MessageList({ messages, status, error, onRegenerate, renderToolC
 
   // Screen readers get one announcement per reply instead of one per token.
   const [announce, setAnnounce] = useState("");
+  // biome-ignore lint/correctness/useExhaustiveDependencies: announce only when the status changes, not on every token
   useEffect(() => {
     if (status === "idle" && last?.role === "assistant") {
       // Rendered text, not raw markdown, so "**bold**" isn't read out as asterisks.
       const body = ref.current?.querySelector("article:last-of-type .ck-msg__body");
       setAnnounce((body?.textContent ?? messageText(last)).slice(0, 500));
     } else setAnnounce(statusText[status]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   return (
@@ -68,6 +68,7 @@ export function MessageList({ messages, status, error, onRegenerate, renderToolC
         aria-live="off"
         aria-busy={streaming}
         aria-label="Conversation"
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: scrollable log must be keyboard-reachable
         tabIndex={0}
       >
         {messages.length === 0 && empty}
@@ -86,10 +87,12 @@ export function MessageList({ messages, status, error, onRegenerate, renderToolC
                 {m.parts.map((p, i) =>
                   p.type === "text" ? (
                     m.role === "user" ? (
+                      // biome-ignore lint/suspicious/noArrayIndexKey: parts are append-only, so the index is stable
                       <p key={i} className="ck-user-text">
                         {p.text}
                       </p>
                     ) : (
+                      // biome-ignore lint/suspicious/noArrayIndexKey: parts are append-only, so the index is stable
                       <Markdown key={i}>{p.text}</Markdown>
                     )
                   ) : (
