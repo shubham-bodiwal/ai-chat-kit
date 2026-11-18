@@ -7,5 +7,10 @@
     "build": "pnpm -r build",
     "test": "pnpm --filter @ai-chat-kit/react test",
     "typecheck": "pnpm -r typecheck"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham-bodiwal/ai-chat-kit.git"
+  },
+  "homepage": "https://github.com/shubham-bodiwal/ai-chat-kit#readme"
 }
