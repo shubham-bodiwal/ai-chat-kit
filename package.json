@@ -1,0 +1,11 @@
+{
+  "name": "ai-chat-kit-monorepo",
+  "private": true,
+  "packageManager": "pnpm@12.6.0",
+  "scripts": {
+    "dev": "pnpm --filter demo dev",
+    "build": "pnpm -r build",
+    "test": "pnpm --filter @ai-chat-kit/react test",
+    "typecheck": "pnpm -r typecheck"
+  }
+}
