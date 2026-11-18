@@ -6,11 +6,30 @@
     "dev": "pnpm --filter demo dev",
     "build": "pnpm -r build",
     "test": "pnpm --filter @ai-chat-kit/react test",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "lint": "biome lint ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shubham-bodiwal/ai-chat-kit.git"
   },
-  "homepage": "https://github.com/shubham-bodiwal/ai-chat-kit#readme"
+  "homepage": "https://github.com/shubham-bodiwal/ai-chat-kit#readme",
+  "devDependencies": {
+    "@biomejs/biome": "2.6.8"
+  },
+  "description": "Streaming AI chat components for React, with a Next.js demo.",
+  "keywords": [
+    "react",
+    "ai",
+    "chat",
+    "streaming",
+    "llm",
+    "nextjs"
+  ],
+  "author": "Shubham Bhodiwal (https://github.com/shubham-bodiwal)",
+  "license": "MIT",
+  "bugs": "https://github.com/shubham-bodiwal/ai-chat-kit/issues",
+  "engines": {
+    "node": ">=20"
+  }
 }

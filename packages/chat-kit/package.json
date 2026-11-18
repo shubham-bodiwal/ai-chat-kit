@@ -51,5 +51,26 @@
     "tsup": "^9.0.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.12"
+  },
+  "keywords": [
+    "react",
+    "ai",
+    "chat",
+    "streaming",
+    "llm",
+    "markdown",
+    "tool-calls",
+    "accessibility"
+  ],
+  "author": "Shubham Bhodiwal (https://github.com/shubham-bodiwal)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham-bodiwal/ai-chat-kit.git",
+    "directory": "packages/chat-kit"
+  },
+  "homepage": "https://github.com/shubham-bodiwal/ai-chat-kit#readme",
+  "bugs": "https://github.com/shubham-bodiwal/ai-chat-kit/issues",
+  "engines": {
+    "node": ">=20"
   }
 }
